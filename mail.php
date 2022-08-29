@@ -1,6 +1,6 @@
 <?php
-$EMAIL = array('programma@stek74.ru', 'support@stek-trust.ru');
-$SUBJECT = "СТЭК-ТРАСТ Мобильная версия. Запрос с продающей страницы mobile.stek-trust.ru";
+$EMAIL = array('p******u', 's******t.ru');
+$SUBJECT = "***** Мобильная версия. Запрос с продающей страницы m*********u";
 
 session_start();
 include_once 'securimage/securimage.php';
@@ -18,22 +18,22 @@ $client_email = $_POST['tool'];
 if ($securimage->check($_POST['aster']) == false) {
 
   echo "<script>alert('Код на изображении введён неверно.');
-  document.location.replace('//mobile.stek-trust.ru');</script>";
+  document.location.replace('//m*******u');</script>";
  exit;
 }
 
 $BODY = "К вам обратились:\nФИО: $fio\nТелефон: $phone\nЭлектронная почта: $client_email\nСообщение:\n\n$message";
 
 $from = $client_email;
-$to = $EMAIL; //array('programma@stek74.ru', 'support@stek74.ru');
+$to = $EMAIL; //array('p*******u', 's*****u');
 
 $smtp = new smtp_class;
-$smtp->host_name="mail.stek-trust.ru";
-$smtp->host_port='25';
-$smtp->user='info@stek-trust.ru';
-$smtp->password='656285+';
-$smtp->ssl=0;
-$smtp->debug=0;       //0 here in production
+$smtp->host_name="m********u";
+$smtp->host_port='**';
+$smtp->user='****';
+$smtp->password='*******';
+$smtp->ssl=*;
+$smtp->debug=*;       //0 here in production
 //$smtp->html_debug=1; //same
   
 if($smtp->SendMessage(
@@ -50,12 +50,12 @@ if($smtp->SendMessage(
 )
 
  echo "<script>alert('Сообщение успешно отправлено.');
- document.location.replace('//mobile.stek-trust.ru');</script>";
+ document.location.replace('//m*******u');</script>";
 
 else
 
  echo "<script>alert('Ошибка сервера. Не удалось отправить сообщение, попробуйте еще раз');
- document.location.replace('//mobile.stek-trust.ru');</script>";
+ document.location.replace('//m**********u');</script>";
   //echo "Could not send the message to $to.\nError: ".$smtp->error."\n";
 
 ?>
